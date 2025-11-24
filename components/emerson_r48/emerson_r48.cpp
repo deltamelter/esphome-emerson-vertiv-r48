@@ -15,7 +15,7 @@ static const float EMR48_OUTPUT_VOLTAGE_MAX = 58.5;
 
 static const float EMR48_OUTPUT_CURRENT_RATED_VALUE = 62.5;
 // static const float EMR48_OUTPUT_CURRENT_RATED_PERCENTAGE_MIN = 10;
-static const float EMR48_OUTPUT_CURRENT_RATED_PERCENTAGE_MIN = 2;
+static const float EMR48_OUTPUT_CURRENT_RATED_PERCENTAGE_MIN = 1;
 static const float EMR48_OUTPUT_CURRENT_RATED_PERCENTAGE_MAX = 121;
 static const float EMR48_OUTPUT_CURRENT_RATED_PERCENTAGE = 121;
 static const float EMR48_OUTPUT_CURRENT_MIN = 1; // 2%, rounded up to nearest 0.5A
@@ -322,7 +322,7 @@ void EmersonR48Component::set_max_output_current(float value, bool offline) {
         ESP_LOGD(TAG, "max_output_current: sent can_message.data: %s", buffer);
 
     } else {
-        ESP_LOGD(TAG, "Current should be between 10 and 121\n");
+        ESP_LOGD(TAG, "Current should be between 1 and 121\n");
     }
 }
 
